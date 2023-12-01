@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoHoHoTunes</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" </head>
+
+<body>
+    <div class="top-container">
+        <form action="/" method="POST" id="form">
+            <img src="assets/brook.png" class="logo" alt="">
+            <h1>YoHoHoTunes</h1>
+            <h4>Enter the Video ID</h4>
+            <div><input type="text" name="videoID"><button id="convert-btn">Convert</button></div>
+
+        </form>
+    </div>
+    <div class="bottom-container">
+        <% if(typeof success !="undefined" && success){%>
+            <div class="success">
+                <p class="success-msg">
+                    <%= message%><br>
+                </p>
+                <p class="content">
+
+                    <%= song_title%>
+                        <a href="<%= song_link%>"><button id="download-btn">Download</button></a><br>
+
+                </p>
+            </div>
+            <%} else if(typeof success !="undefined" && !success){%>
+                <div class="errors">
+                    <p>
+                        <%= message%>
+                    </p>
+                </div>
+                <%}%>
+
+    </div>
+</body>
+
+</html>
